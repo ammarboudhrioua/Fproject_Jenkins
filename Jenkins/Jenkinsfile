@@ -1,12 +1,36 @@
-    pipeline {
+//     pipeline {
+//     agent any
+//     options {
+//         timestamps()
+//         timeout(time : 1, unit: "MINUTES")
+//     }
+//     stages {
+//         stage ('Print Date'){
+//                 echo "today is 04-02-2024"
+//         }
+//     }
+// }
+pipeline {
     agent any
     options {
         timestamps()
         timeout(time : 1, unit: "MINUTES")
     }
     stages {
-        stage ('Print Date'){
-                echo "today is 04-02-2024"
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
     }
 }
