@@ -1,5 +1,9 @@
 {
     agent any
+    option {
+        timestamps()
+        timeout(time : 1, unit: "MINUTES")
+    }
     stages {
         stage ('Print Date'){
             steps{
